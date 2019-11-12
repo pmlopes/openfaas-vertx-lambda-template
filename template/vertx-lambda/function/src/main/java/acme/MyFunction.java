@@ -21,10 +21,11 @@ public class MyFunction implements Lambda<JsonObject> {
 
   @Override
   public void handle(Message<JsonObject> event) {
-    System.out.println("HEADERS: " + event.headers());
-    System.out.println("BODY: " + event.body());
+    // you can inspect the request headers and body from the event
+    // System.out.println("HEADERS: " + event.headers());
+    // System.out.println("BODY: " + event.body());
 
-    // Here your business logic...
+    // TODO: Here your business logic...
 
     event.reply(
       new JsonObject()
