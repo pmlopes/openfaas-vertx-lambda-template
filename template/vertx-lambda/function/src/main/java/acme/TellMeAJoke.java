@@ -18,6 +18,7 @@ import xyz.jetdrone.vertx.lambda.Lambda;
 public class TellMeAJoke implements Lambda<JsonObject> {
 
   WebClient client;
+
   @Override
   public void init(Vertx vertx) {
     // If the dependency is enabled in the pom.xml then activate the provider here
@@ -28,6 +29,12 @@ public class TellMeAJoke implements Lambda<JsonObject> {
       vertx,
       // the client by default will use SSL and trust all hosts
       new WebClientOptions().setSsl(true).setTrustAll(true));
+  }
+
+  @Override
+  public String alias() {
+    // this function maps to the root path
+    return "/";
   }
 
   /**

@@ -31,7 +31,6 @@ USER app
 
 ENV upstream_url="http://127.0.0.1:8000"
 ENV mode="http"
-ENV _HANDLER="/acme/MyFunction"
 
 ENV fprocess="java -Xtune:virtualized -Xshareclasses -Xshareclasses:cacheDir=/tmp/openj9/_cache -jar openfaas-runner.jar"
 
