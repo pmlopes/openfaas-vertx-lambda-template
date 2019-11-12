@@ -11,7 +11,7 @@ RUN mvn de.qaware.maven:go-offline-maven-plugin:resolve-dependencies -B -q
 # copy your other files
 COPY ./function/src ./src
 # build for release
-RUN mvn package -B
+RUN mvn package -B -q
 
 # Get the latest watchdog
 FROM openfaas/of-watchdog:0.7.2 as watchdog
