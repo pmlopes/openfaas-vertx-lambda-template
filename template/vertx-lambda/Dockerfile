@@ -33,7 +33,7 @@ ENV upstream_url="http://127.0.0.1:8000"
 ENV mode="http"
 ENV _HANDLER="/acme/MyFunction"
 
-ENV fprocess="java -Xtune:virtualized -Xshareclasses -Xshareclasses:cacheDir=_cache -jar openfaas-runner.jar"
+ENV fprocess="java -Xtune:virtualized -Xshareclasses -Xshareclasses:cacheDir=/tmp/openj9/_cache -jar openfaas-runner.jar"
 
 # Prepopulate the AOT class cache
 RUN DRYRUN=true ${fprocess}
