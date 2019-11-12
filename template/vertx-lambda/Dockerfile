@@ -7,11 +7,11 @@ WORKDIR /app/function
 # copy the project files
 COPY ./function/pom.xml ./pom.xml
 # cache all dependencies + plugins
-RUN mvn de.qaware.maven:go-offline-maven-plugin:resolve-dependencies
+RUN mvn de.qaware.maven:go-offline-maven-plugin:resolve-dependencies -B -q
 # copy your other files
 COPY ./function/src ./src
 # build for release
-RUN mvn package
+RUN mvn package -B
 
 # Get the latest watchdog
 FROM openfaas/of-watchdog:0.7.2 as watchdog
