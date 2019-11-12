@@ -15,7 +15,7 @@ import xyz.jetdrone.vertx.lambda.Lambda;
 import java.util.ServiceLoader;
 
 @RunWith(VertxUnitRunner.class)
-public class MyFunctionTest {
+public class TellMeAJokeTest {
 
   @Rule
   public RunTestOnContext rule = new RunTestOnContext();
@@ -35,7 +35,7 @@ public class MyFunctionTest {
     final Async test = should.async();
     final EventBus eb = rule.vertx().eventBus();
 
-    eb.<JsonObject>send(MyFunction.class.getName(), new JsonObject(), msg -> {
+    eb.<JsonObject>send(TellMeAJoke.class.getName(), new JsonObject(), msg -> {
       if (msg.failed()) {
         should.fail(msg.cause());
       } else {

@@ -31,9 +31,29 @@
 
   <dependencies>
     <dependency>
+      <groupId>xyz.jetdrone</groupId>
+      <artifactId>vertx.lambda</artifactId>
+      <version>0.0.7</version>
+    </dependency>
+    <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-core</artifactId>
     </dependency>
+    <!-- This dependency is needed for the example function that will fetch a Joke on the internet -->
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-web-client</artifactId>
+    </dependency>
+    <!-- If you enable this dependency your crypto operations will be faster but it will require 10Mb extra RAM -->
+    <!--
+    <dependency>
+      <groupId>software.amazon.cryptools</groupId>
+      <artifactId>AmazonCorrettoCryptoProvider</artifactId>
+      <version>LATEST</version>
+      <classifier>linux-x86_64</classifier>
+    </dependency>
+    -->
+    <!-- test dependencies -->
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-unit</artifactId>
@@ -45,20 +65,6 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>xyz.jetdrone</groupId>
-      <artifactId>vertx.lambda</artifactId>
-      <version>0.0.6</version>
-    </dependency>
-    <!-- If you enable this dependency your crypto operations will be faster but it will require 10Mb extra RAM -->
-    <!--
-    <dependency>
-      <groupId>software.amazon.cryptools</groupId>
-      <artifactId>AmazonCorrettoCryptoProvider</artifactId>
-      <version>LATEST</version>
-      <classifier>linux-x86_64</classifier>
-    </dependency>
-    -->
   </dependencies>
 
   <build>
